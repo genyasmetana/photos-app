@@ -1,0 +1,77 @@
+.figure {
+  position: relative;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  max-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.8), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.4);
+
+  &__img {
+    width: 100%;
+  }
+
+  &__description {
+    padding: 8px 6px 6px;
+  }
+}
+
+.icon-heart {
+  position: absolute;
+  top: 190px;
+  right: 14px;
+
+  margin-top: 6px;
+  margin-left: 5px;
+  width: 10px;
+  height: 10px;
+
+  color: #000;
+  border-left: solid 1px currentColor;
+  border-bottom: solid 1px currentColor;
+  background: white;
+  transform: rotate(-45deg);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -1px;
+    width: 8px;
+    height: 5px;
+    border-radius: 5px 5px 0 0;
+    border-top: solid 1px currentColor;
+    border-left: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    background: white;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 8px;
+    width: 5px;
+    height: 8px;
+    border-radius: 0 5px 5px 0;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    border-bottom: solid 1px currentColor;
+    background: white;
+  }
+
+  &.isActive {
+    background: #ffb300;
+    color: #ada4a4;
+    &:before,
+    &:after {
+      background: #ffb300;
+    }
+  }
+}

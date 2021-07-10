@@ -7,7 +7,7 @@ import Header from "./libs/common/components/header";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="container">
         <Header />
         <Routes />
       </div>

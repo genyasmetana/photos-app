@@ -1,0 +1,22 @@
+.list {
+  padding: 0 30px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ffb300;
+
+  &__item {
+    display: flex;
+    padding: 8px;
+    border: 1px solid #ffb300;
+    color: black;
+    border-radius: 0;
+    text-decoration: none;
+    margin: 10px 0 -1px;
+
+    &--active {
+      background: #ffb300;
+    }
+  }
+}

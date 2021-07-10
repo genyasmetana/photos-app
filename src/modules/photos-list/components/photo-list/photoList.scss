@@ -1,0 +1,21 @@
+@import "../../../../resources/styles/media";
+
+.photos-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px 16px;
+
+  @include media(min, sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media(min, md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.load-more-container {
+  margin: 12px auto;
+  display: flex;
+  justify-content: center;
+}
