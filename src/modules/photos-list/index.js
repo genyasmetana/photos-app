@@ -16,7 +16,7 @@ export default function PhotosList() {
   });
 
   useEffect(() => {
-    setTimeout(() => dispatch(getPhotosListAction()), 1000);
+    dispatch(getPhotosListAction());
   }, [dispatch]);
 
   return (
