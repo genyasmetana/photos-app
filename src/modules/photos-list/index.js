@@ -29,6 +29,7 @@ export default function PhotosList() {
       liked: false,
     },
   ];
+
   return (
     <div>
       <h2>Photo List</h2>
