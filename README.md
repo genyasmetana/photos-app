@@ -11,7 +11,7 @@ You need to install dependencies via `npm install` or `yarn add`
    `npm start` or `yarn start`
    
 
-##Architecture:
+## Architecture:
 
 Top-level project architecture (which is under src/ folder) should be organized by type.
 
