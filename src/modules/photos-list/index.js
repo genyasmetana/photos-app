@@ -1,39 +1,31 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+
+import { getPhotosListAction } from "./actions";
 import PhotoList from "./components/photo-list";
 
 import "./photosList.scss";
 
 export default function PhotosList() {
-  const photoList = [
-    {
-      albumId: 1,
-      id: 1,
-      title: "accusamus beatae ad facilis cum similique qui sunt",
-      url: "https://via.placeholder.com/600/92c952",
-      thumbnailUrl: "https://via.placeholder.com/150/92c952",
-      liked: false,
-    },
-    {
-      albumId: 2,
-      id: 2,
-      title: "accusamus beatae ad facilis cum similique qui sunt",
-      url: "https://via.placeholder.com/600/92c952",
-      thumbnailUrl: "https://via.placeholder.com/150/92c952",
-      liked: true,
-    },
-    {
-      albumId: 3,
-      id: 3,
-      title: "accusamus beatae ad facilis cum similique qui sunt",
-      url: "https://via.placeholder.com/600/92c952",
-      thumbnailUrl: "https://via.placeholder.com/150/92c952",
-      liked: false,
-    },
-  ];
+  const dispatch = useDispatch();
+  const { pathname } = useLocation();
+
+  const photoList = useSelector(({ photosList }) => {
+    return photosList;
+  });
+
+  useEffect(() => {
+    setTimeout(() => dispatch(getPhotosListAction()), 1000);
+  }, [dispatch]);
 
   return (
-    <div>
-      <h2>Photo List</h2>
-      <PhotoList photoList={photoList} />
+    <div className="content">
+      <h2 className="content__title">
+        {pathname === "/liked" ? "Liked Photos" : "Photo list"}
+      </h2>
+
+      <PhotoList list={photoList} />
     </div>
   );
 }
