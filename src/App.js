@@ -1,8 +1,17 @@
+import React from "react";
+import Routes from "./main/routes";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import Header from "./libs/common/components/header";
+
 function App() {
   return (
-    <div className="App">
-      <div>Test Project</div>
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Routes />
+      </div>
+    </Router>
   );
 }
 
