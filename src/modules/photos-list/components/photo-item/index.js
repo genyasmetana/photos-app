@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import "./photoItem.scss";
 
-const PhotoItem = ({ item }) => {
+const PhotoItem = ({ item, handleSelect }) => {
   const { thumbnailUrl, title, liked } = item;
 
   const likeBtn = classNames({
@@ -13,7 +13,7 @@ const PhotoItem = ({ item }) => {
   return (
     <figure className="figure">
       <img className="figure__img" src={thumbnailUrl} alt={title} />
-      <div className={likeBtn} />
+      <div className={likeBtn} onClick={() => handleSelect(item)} />
       <figcaption className="figure__description">{title}</figcaption>
     </figure>
   );

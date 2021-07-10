@@ -1,8 +1,17 @@
+import React from "react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import "./index.scss";
+import {
+  likedPhotosAction,
+  photoListAction,
+} from "../../../../modules/photos-list/actions";
+
+import "./header.scss";
 
 export default function Header() {
+  const dispatch = useDispatch();
+
   return (
     <nav>
       <ul className="list">
@@ -11,6 +20,7 @@ export default function Header() {
             className="list__item"
             activeClassName="list__item--active"
             to="/list"
+            onClick={() => dispatch(photoListAction())}
           >
             Photos List
           </NavLink>
@@ -20,6 +30,7 @@ export default function Header() {
             className="list__item"
             activeClassName="list__item--active"
             to="/liked"
+            onClick={() => dispatch(likedPhotosAction())}
           >
             Photos Liked
           </NavLink>
